@@ -6,6 +6,8 @@ int main(void){
     cout<<"BIENVENIDOS AL JUEGO"<<endl;
     cout<<"--------------------"<<endl;
 
+    cout<<
+
     cout<<endl<<endl;
     return 0;
 }
