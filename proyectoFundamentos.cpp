@@ -14,5 +14,3 @@ const int capacidadInicial = 400;  // Constante que define el numero maximo de p
 int capacidad = capacidadInicial;  // Gestiona la dinamica de los participantes del juego 
 string participantes[capacidadInicial]; // Arreglo encargado de guardar a los participantes 
 int numParticipantes = 0;  // Contador encargado del numero actual de participantes registrados 
-
-// Función para dibujar el tablero de juego
