@@ -26,3 +26,34 @@ void mostrarTablero()
     cout << "| " << tablero[2][0] << " | " << tablero[2][1] << " | " << tablero[2][2] << " | " << "\n";
     cout << "-------------\n";
 }
+
+// Función para reiniciar el tablero
+void reiniciarTablero()
+{
+    int contador = 1;   // Variable asignada como contador 
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            tablero[i][j] = '0' + contador;
+            contador++;
+        }
+    }
+}
+
+// Función para colocar el marcador en el tablero
+bool colocarMarcador(int casilla)
+{
+    int fila = (casilla - 1) / 3;
+    int columna = (casilla - 1) % 3;
+
+    if (tablero[fila][columna] != 'X' && tablero[fila][columna] != 'O')
+    {
+        tablero[fila][columna] = MA;
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
