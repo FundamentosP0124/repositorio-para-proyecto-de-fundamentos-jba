@@ -202,4 +202,27 @@ void inscribirParticipante(string nombre)
     }
 }
 
-// Funcion encargada de crear el archivo donde iran los participantes 
+// Funcion encargada de crear el archivo donde iran los participantes
+void mostrarParticipantes()
+{
+    ifstream archivo("PARTICIPANTES.txt");
+    if (archivo.is_open())
+    {
+        string linea;
+        cout << "LISTA DE PARTICIPANTES:\n";
+        cout << "-----------------------\n";
+        while (getline(archivo, linea))
+        {
+            cout << linea << endl;
+        }
+        archivo.close();
+    }
+    else
+    {
+        cout << "No se pudo abrir el archivo de participantes.\n";
+    }
+
+    cout << endl;
+    system("pause");
+    system("cls");
+}
