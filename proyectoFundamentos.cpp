@@ -107,3 +107,39 @@ void cambiarJugadorYMarcador()
         JA = 1;
     }
 }
+// Funcion encargada de guardar a los ganadores de cada partida 
+void guardarGanador(string nombre)
+{
+    bool encontrado = false;
+    for (int i = 0; i < numGanadores; i++)
+    {
+        if (registroGanador[i] == nombre)
+        {
+            victorias[i]++;
+            encontrado = true;
+            break;
+        }
+    }
+
+    if (!encontrado && numGanadores < maxGanadores)
+    {
+        registroGanador[numGanadores] = nombre;
+        victorias[numGanadores] = 1; // Inicia con una victoria
+        numGanadores++;
+    }
+
+    // Guardar los nombres y las victorias en el archivo
+    ofstream archivo("GANADORES.txt", ios::trunc); // Usa ios::trunc para reescribir el archivo
+    if (archivo.is_open())
+    {
+        for (int i = 0; i < numGanadores; i++)
+        {
+            archivo << registroGanador[i] << " -Victorias: " << victorias[i] << endl;
+        }
+        archivo.close();
+    }
+    else
+    {
+        cout << "No se pudo abrir el archivo de ganadores." << endl;
+    }
+}
