@@ -201,3 +201,5 @@ void inscribirParticipante(string nombre)
         cout << "No se pudo abrir el archivo de participantes.\n";
     }
 }
+
+// Funcion encargada de crear el archivo donde iran los participantes 
