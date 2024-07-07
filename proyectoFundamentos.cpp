@@ -226,3 +226,90 @@ void mostrarParticipantes()
     system("pause");
     system("cls");
 }
+
+// Función para repetir el juego
+void repetirJuego()
+{    
+    static bool yaseJugo = false;  // Variable estática para rastrear si el juego ya se ha repetido
+
+    if (yaseJugo)
+    {
+        cout << "El juego solo puede repetirse una vez para tener un desempate. \nVuelva al menu principal...\n";
+        cout << endl;
+        return;
+    }
+
+    reiniciarTablero();
+    char MJ1;
+
+    cout << NombreJ1 << "\nElige tu Marcador (X u O): ";
+    cin >> MJ1;
+    cout << endl;
+
+    while (MJ1 != 'X' && MJ1 != 'O')
+    {
+        cout << "Marcador Invalido!" << endl;
+        cout << "Por favor elige 'X' o 'O': ";
+        cin >> MJ1;
+        cout << endl
+             << endl;
+    }
+
+    JA = 1;
+    MA = MJ1;
+
+    mostrarTablero();
+
+    int JG = 0;  // Jugador ganador
+
+    for (int i = 0; i < 9; i++)
+    {
+        int casilla;  // Variable que guarda el numero de la casilla a ingresar
+
+        cout << "\nEs el Turno del Jugador " << JA << ". Ingresa el Numero de Casilla: ";
+        cin >> casilla;
+        cout << endl;
+
+        if (casilla < 1 || casilla > 9)
+        {
+            cout << "Casilla Invalida! \nIntentalo Otra Vez.\n";
+            i--;
+            continue;
+        }
+
+        if (!colocarMarcador(casilla))
+        {
+            cout << "Casilla Ocupada! \nIntentalo Otra Vez.\n";
+            i--;
+            continue;
+        }
+
+        system("cls");
+        mostrarTablero();
+
+        JG = ganadorJuego();
+
+        if (JG == 1)
+        {
+            cout << endl << "Felicitaciones! " << NombreJ1 << "Eres el Ganador.\n";
+            guardarGanador(NombreJ1);
+            break;
+        }
+        else if (JG == 2)
+        {
+            cout << endl << "Felicitaciones! " << NombreJ2 << " Eres el Ganador.\n";
+            guardarGanador(NombreJ2);
+            break;
+        }
+
+        cambiarJugadorYMarcador();
+    }
+    if (JG == 0)
+    {
+        cout << "El Juego ha Terminado en Empate.\n";
+    }
+
+    cout << endl;
+    
+    yaseJugo = true;  // Establecer yaJugado a true después de que el juego se haya repetido una vez
+}
