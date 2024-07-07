@@ -107,6 +107,7 @@ void cambiarJugadorYMarcador()
         JA = 1;
     }
 }
+
 // Funcion encargada de guardar a los ganadores de cada partida 
 void guardarGanador(string nombre)
 {
@@ -141,5 +142,62 @@ void guardarGanador(string nombre)
     else
     {
         cout << "No se pudo abrir el archivo de ganadores." << endl;
+    }
+}
+
+// Funcion donde se crea el archivo donde iran los ganadores 
+void mostrarGanadores()
+{
+    ifstream archivo("GANADORES.txt");
+    if (archivo.is_open())
+    {
+        string nombre;
+        cout << "LISTA DE GANADORES:" << endl;
+        cout << "-------------------" << endl;
+        while (getline(archivo, nombre))
+        {
+            cout << nombre << endl;
+        }
+        archivo.close();
+    }
+    else
+    {
+        cout << "No se pudo abrir el archivo de ganadores." << endl;
+    }
+
+    cout << endl;
+    system("pause"); // Pausa la ejecución del programa y espera a que el usuario presione una tecla para continuar.
+    system("cls");  // Limpia la consola.
+}
+
+// Funcion encargada de guardar las inscripciones de los participantes en cada ronda  
+void inscribirParticipante(string nombre)
+{
+    // Verifica si el participante ya está inscrito
+    for (int i = 0; i < numParticipantes; i++)
+    {
+        if (participantes[i] == nombre)
+        {
+            cout << "El participante " << nombre << "ya esta inscrito.\n\n";
+            return;
+        }
+    }
+
+    // Añade el nuevo participante al array
+    participantes[numParticipantes++] = nombre;
+
+    // Guarda la lista de participantes en el archivo
+    ofstream archivo("PARTICIPANTES.txt", ios::trunc); // Usa ios::trunc para reescribir el archivo
+    if (archivo.is_open())
+    {
+        for (int i = 0; i < numParticipantes; i++)
+        {
+            archivo << "-" << participantes[i] << endl;
+        }
+        archivo.close();
+    }
+    else
+    {
+        cout << "No se pudo abrir el archivo de participantes.\n";
     }
 }
