@@ -85,3 +85,25 @@ int ganadorJuego()
     }
     return 0;
 }
+
+// Función para cambiar de jugador y de marcador
+void cambiarJugadorYMarcador()
+{
+    if (MA == 'X')
+    {
+        MA = 'O';
+    }
+    else
+    {
+        MA = 'X';
+    }
+
+    if (JA == 1)
+    {
+        JA = 2;
+    }
+    else
+    {
+        JA = 1;
+    }
+}
