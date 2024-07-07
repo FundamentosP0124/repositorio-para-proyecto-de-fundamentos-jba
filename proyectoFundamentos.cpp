@@ -16,3 +16,13 @@ string participantes[capacidadInicial]; // Arreglo encargado de guardar a los pa
 int numParticipantes = 0;  // Contador encargado del numero actual de participantes registrados 
 
 // Función para dibujar el tablero de juego
+void mostrarTablero()
+{
+    cout << "-------------\n";
+    cout << "| " << tablero[0][0] << " | " << tablero[0][1] << " | " << tablero[0][2] << " | " << "\n";
+    cout << "|---|---|---|\n";
+    cout << "| " << tablero[1][0] << " | " << tablero[1][1] << " | " << tablero[1][2] << " | " << "\n";
+    cout << "|---|---|---|\n";
+    cout << "| " << tablero[2][0] << " | " << tablero[2][1] << " | " << tablero[2][2] << " | " << "\n";
+    cout << "-------------\n";
+}
