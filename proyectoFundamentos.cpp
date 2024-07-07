@@ -57,3 +57,31 @@ bool colocarMarcador(int casilla)
         return false;
     }
 }
+
+// Función para determinar el ganador
+int ganadorJuego()
+{
+    for (int i = 0; i < 3; i++)
+    {
+        // Revisar filas
+        if (tablero[i][0] == tablero[i][1] && tablero[i][1] == tablero[i][2])
+        {
+            return JA;
+        }
+        // Revisar columnas
+        if (tablero[0][i] == tablero[1][i] && tablero[1][i] == tablero[2][i])
+        {
+            return JA;
+        }
+    }
+    // Revisar diagonales
+    if (tablero[0][0] == tablero[1][1] && tablero[1][1] == tablero[2][2])
+    {
+        return JA;
+    }
+    if (tablero[0][2] == tablero[1][1] && tablero[1][1] == tablero[2][0])
+    {
+        return JA;
+    }
+    return 0;
+}
