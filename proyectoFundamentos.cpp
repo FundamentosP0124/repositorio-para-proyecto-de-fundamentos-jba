@@ -712,8 +712,45 @@ int main(){
 
     do
     {
+        cout << endl
+             << "BIENVENIDOS AL JUEGO" << endl;
+        cout << "       X|O|X" << endl;
+        cout << "--------------------" << endl;
+        cout << "1. Iniciar Partida" << endl;
+        cout << "2. Ganadores" << endl;
+        cout << "3. Inscripciones" << endl;
+        cout << "4. Ayuda" << endl;
+        cout << "5. Creditos" << endl;
+        cout << "6. Salir del Juego" << endl;
+        cout << "--------------------" << endl
+             << endl;
+        cout << "Ingresa el Numero de Opcion: ";
+        cin >> opcion;
 
-    
+        switch (opcion)
+        {
+        case 1:
+            break;
+            
+        case 2:
+            break;
+
+        case 3:
+            break;
+
+        case 4:
+            break;
+
+        case 5:
+            break;
+
+        case 6:
+            break;
+
+        default:
+            break;
+        }
+
     }while(opcion != 6);
     return 0;
 }
