@@ -633,3 +633,162 @@ void pruebaJuego()
         cout << "\nEs un empate!\n\n";
     }
 }
+
+// Funcion encargada de proporcionar las opciones del menu de ayuda
+void menuAyuda(){
+    int OP; // Variable que guarda la opcion
+    do
+    {
+        system("cls");
+        cout << "MENU DE AYUDA" << endl;
+        cout << "--------------------" << endl;
+        cout << "1. Guia" << endl;
+        cout << "2. Juego de Prueba" << endl;
+        cout << "3. Salir del Menu" << endl;
+        cout << "--------------------" << endl
+             << endl;
+        cout << "Ingresa el numero de opcion: ";
+        cin >> OP;
+
+        switch (OP)
+        {
+        case 1:
+            system("cls");
+            cout << endl
+                 << "BIENVENIDO A LA GUIA" << endl;
+            cout << "--------------------" << endl
+                 << endl;
+            cout << "PASO 1: Escribe un Nombre, Un Apellido y Tu Carnet" << endl
+                 << endl;
+            cout << "PASO 2: Escoge la Figura que Deseas Usar (X u O)\n Nota: Escribelas en Mayuscula" << endl
+                 << endl;
+            cout << "PASO 3: Marca el Numero de la casilla a elegir" << endl
+                 << endl;
+
+            mostrarTablero();
+            cout << endl;
+
+            cout << "El Ganador es el Primero en Alinear 3 de sus Figuras" << endl;
+            cout << "Si Ninguno de los jugadores Alinea 3 de sus figuras, sera un Empate" << endl
+                 << endl;
+            cout << "El juego presenta dos opciones incluidas, una de revancha y la otra de repetir juego si se llega a dar un empate" << endl
+                 << endl;
+            system("pause");
+            system("cls");
+            break;
+
+        case 2:
+            system("cls");
+            cout << "PRUEBA\n";
+            cout << "------\n";
+            pruebaJuego();
+            system("pause");
+            system("cls");
+            break;
+
+        case 3:
+             system("cls");
+            cout << "SALIENDO AL MENU PRINCIPAL..." << endl
+                 << endl;
+            system("pause");
+            system("cls");
+            break;
+
+        default:
+            system("cls");
+            cout << endl
+                 << "Opcion Erronea\nPor favor, Ingrese una Opcion Valida" << endl
+                 << endl;
+            system("pause");
+            system("cls");
+            break;    
+        }
+    } while (OP != 3);
+    
+}
+
+int main(){
+    int opcion; // Variable que guarda la opcion 
+
+    do
+    {
+        cout << endl
+             << "BIENVENIDOS AL JUEGO" << endl;
+        cout << "       X|O|X" << endl;
+        cout << "--------------------" << endl;
+        cout << "1. Iniciar Partida" << endl;
+        cout << "2. Ganadores" << endl;
+        cout << "3. Inscripciones" << endl;
+        cout << "4. Ayuda" << endl;
+        cout << "5. Creditos" << endl;
+        cout << "6. Salir del Juego" << endl;
+        cout << "--------------------" << endl
+             << endl;
+        cout << "Ingresa el Numero de Opcion: ";
+        cin >> opcion;
+
+        switch (opcion)
+        {
+        case 1:
+            system("cls");
+            juego();
+            system("pause");
+            system("cls");
+            break;
+
+        case 2:
+            system("cls");
+            mostrarGanadores();
+            break;
+
+        case 3:
+            system("cls");
+            mostrarParticipantes();
+            break;
+
+        case 4:
+            menuAyuda();
+            break;
+
+        case 5:
+            system("cls");
+            cout << endl
+                 << "INTEGRANTES DEL GRUPO" << endl;
+            cout << "---------------------" << endl
+                 << endl;
+            cout << "Josue Rafael Carpio Oliva" << endl;
+            cout << "00018023" << endl
+                 << endl;
+            cout << "Ana Cecilia Menjivar Menjivar" << endl;
+            cout << "00176824" << endl
+                 << endl;
+            cout << "Byron Alexis Zepeda Ramirez" << endl;
+            cout << "00020023" << endl;
+            cout << "--------------------" << endl
+                 << endl;
+            system("pause");
+            system("cls");
+            break;
+
+        case 6:
+            system("cls");
+            cout << "Gracias Por Jugar :)" << endl
+                 << endl;
+            system("pause");
+            system("cls");
+            break;
+
+        default:
+            system("cls");
+            cout << endl
+                 << "Opcion Erronea\nPor favor Ingrese una Opcion Valida" << endl
+                 << endl;
+            system("pause");
+            system("cls");
+            break;
+        }
+
+    }while(opcion != 6);
+    
+    return 0;
+}
