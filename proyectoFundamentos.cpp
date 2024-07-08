@@ -633,3 +633,8 @@ void pruebaJuego()
         cout << "\nEs un empate!\n\n";
     }
 }
+
+// Funcion encargada de proporcionar las opciones del menu de ayuda
+void menuAyuda(){
+    int OP; // Variable que guarda la opcion
+}
