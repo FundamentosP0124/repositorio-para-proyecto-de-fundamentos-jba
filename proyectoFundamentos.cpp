@@ -639,7 +639,28 @@ void menuAyuda(){
     int OP; // Variable que guarda la opcion
     do
     {
-        
+        system("cls");
+        cout << "MENU DE AYUDA" << endl;
+        cout << "--------------------" << endl;
+        cout << "1. Guia" << endl;
+        cout << "2. Juego de Prueba" << endl;
+        cout << "3. Salir del Menu" << endl;
+        cout << "--------------------" << endl
+             << endl;
+        cout << "Ingresa el numero de opcion: ";
+        cin >> OP;
+
+        switch (OP)
+        {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        default:
+            break;    
+        }
     } while (OP != 3);
     
 }
