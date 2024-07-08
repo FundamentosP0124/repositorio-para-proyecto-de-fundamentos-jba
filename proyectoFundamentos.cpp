@@ -311,7 +311,7 @@ void repetirJuego()
 
     cout << endl;
     
-    yaseJugo = true;  // Establecer yaJugado a true después de que el juego se haya repetido una vez
+    yaseJugo = true;  // Establece yaseJugo a true después de que el juego se haya repetido una vez
 }
 
 // Función encargada de mostrar el menú para repetir el juego 
@@ -353,4 +353,78 @@ void menuRepetir()
             break;
         }
     } while (repetir != 2);
+}
+
+// Función eccargada de otorgar una revancha en el juego
+void revanchaJuego()
+{
+    reiniciarTablero();
+    char MJ1; // Variable que guarda el marcador 
+
+    cout << NombreJ1 << "\nElige tu Marcador (X u O): ";
+    cin >> MJ1;
+    cout << endl;
+
+    while (MJ1 != 'X' && MJ1 != 'O')
+    {
+        cout << "Marcador Invalido!" << endl;
+        cout << "Por favor elige 'X' o 'O': ";
+        cin >> MJ1;
+        cout << endl
+             << endl;
+    }
+
+    JA = 1;
+    MA = MJ1;
+
+    mostrarTablero();
+
+    int JG = 0;
+
+    for (int i = 0; i < 9; i++)
+    {
+        int casilla;
+
+        cout << "\nEs el Turno del Jugador " << JA << ". Ingresa el Numero de Casilla: ";
+        cin >> casilla;
+        cout << endl;
+
+        if (casilla < 1 || casilla > 9)
+        {
+            cout << "Casilla Invalida! \nIntentalo Otra Vez.\n";
+            i--;
+            continue;
+        }
+
+        if (!colocarMarcador(casilla))
+        {
+            cout << "Casilla Ocupada! \nIntentalo Otra Vez.\n";
+            i--;
+            continue;
+        }
+
+        system("cls");
+        mostrarTablero();
+
+        JG = ganadorJuego();
+
+        if (JG == 1)
+        {
+            cout << "\nJUGADOR@ " << NombreJ1 << "HA GANADO, FELICIDADES!\n\n ";
+            guardarGanador(NombreJ1);
+            break;
+        }
+        if (JG == 2)
+        {
+            cout << "\nJUGADOR@ " << NombreJ2 << " HA GANADO, FELICIDADES!\n\n ";
+            guardarGanador(NombreJ2);
+            break;
+        }
+        cambiarJugadorYMarcador();
+    }
+
+    if (JG == 0)
+    {
+        cout << "\nEs un empate!\n\n";
+    }
 }
