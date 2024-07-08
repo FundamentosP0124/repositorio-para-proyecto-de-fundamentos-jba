@@ -3,7 +3,11 @@
         {
             "type": "cppbuild",
             "label": "C/C++: gcc.exe compilar archivo activo",
+<<<<<<< HEAD
             "command": "C:/MinGW/bin/gcc.exe",
+=======
+            "command": "C:/msys64/ucrt64/bin/gcc.exe",
+>>>>>>> 3553ba198a7e98f2c34cc98176d0ed79749537b8
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -13,7 +17,11 @@
                 ""
             ],
             "options": {
+<<<<<<< HEAD
                 "cwd": "C:/MinGW/bin"
+=======
+                "cwd": "C:/msys64/ucrt64/bin"
+>>>>>>> 3553ba198a7e98f2c34cc98176d0ed79749537b8
             },
             "problemMatcher": [
                 "$gcc"
