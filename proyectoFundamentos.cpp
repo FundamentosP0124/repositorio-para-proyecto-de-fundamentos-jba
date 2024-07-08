@@ -708,6 +708,12 @@ void menuAyuda(){
 }
 
 int main(){
+    int opcion; // Variable que guarda la opcion 
 
+    do
+    {
+
+    
+    }while(opcion != 6);
     return 0;
 }
