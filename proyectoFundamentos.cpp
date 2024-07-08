@@ -428,3 +428,44 @@ void revanchaJuego()
         cout << "\nEs un empate!\n\n";
     }
 }
+
+// Función encargada de mostrar el menú de la revancha
+void menuRevancha()
+{
+    int decision; // Variable que guarda la opcion 
+
+    do
+    {
+        system("pause");
+        system("cls");
+
+        cout << "REVANCHA" << endl;
+        cout << "-------------" << endl;
+        cout << "1. SI " << endl;
+        cout << "2. NO " << endl;
+        cout << "-------------" << endl
+             << endl;
+        cout << "Opcion a elegir: ";
+        cin >> decision;
+        
+        cout << endl;
+        system("pause");
+        system("cls");
+
+        switch (decision)
+        {
+        case 1:
+            revanchaJuego();
+            break;
+        case 2:
+            cout << "SALIENDO AL MENU PRINCIPAL..." << endl
+                 << endl;
+            break;
+        default:
+            cout << "Opcion invalida! ";
+            cout << endl
+                 << endl;
+            break;
+        }
+    } while (decision != 2);
+}
