@@ -730,27 +730,65 @@ int main(){
         switch (opcion)
         {
         case 1:
+            system("cls");
+            juego();
+            system("pause");
+            system("cls");
             break;
-            
+
         case 2:
+            system("cls");
+            mostrarGanadores();
             break;
 
         case 3:
+            system("cls");
+            mostrarParticipantes();
             break;
 
         case 4:
+            menuAyuda();
             break;
 
         case 5:
+            system("cls");
+            cout << endl
+                 << "INTEGRANTES DEL GRUPO" << endl;
+            cout << "---------------------" << endl
+                 << endl;
+            cout << "Josue Rafael Carpio Oliva" << endl;
+            cout << "00018023" << endl
+                 << endl;
+            cout << "Ana Cecilia Menjivar Menjivar" << endl;
+            cout << "00176824" << endl
+                 << endl;
+            cout << "Byron Alexis Zepeda Ramirez" << endl;
+            cout << "00020023" << endl;
+            cout << "--------------------" << endl
+                 << endl;
+            system("pause");
+            system("cls");
             break;
 
         case 6:
+            system("cls");
+            cout << "Gracias Por Jugar :)" << endl
+                 << endl;
+            system("pause");
+            system("cls");
             break;
 
         default:
+            system("cls");
+            cout << endl
+                 << "Opcion Erronea\nPor favor Ingrese una Opcion Valida" << endl
+                 << endl;
+            system("pause");
+            system("cls");
             break;
         }
 
     }while(opcion != 6);
+    
     return 0;
 }
