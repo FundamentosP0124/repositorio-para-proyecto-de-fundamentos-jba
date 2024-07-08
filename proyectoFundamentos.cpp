@@ -653,12 +653,54 @@ void menuAyuda(){
         switch (OP)
         {
         case 1:
+            system("cls");
+            cout << endl
+                 << "BIENVENIDO A LA GUIA" << endl;
+            cout << "--------------------" << endl
+                 << endl;
+            cout << "PASO 1: Escribe un Nombre, Un Apellido y Tu Carnet" << endl
+                 << endl;
+            cout << "PASO 2: Escoge la Figura que Deseas Usar (X u O)\n Nota: Escribelas en Mayuscula" << endl
+                 << endl;
+            cout << "PASO 3: Marca el Numero de la casilla a elegir" << endl
+                 << endl;
+
+            mostrarTablero();
+            cout << endl;
+
+            cout << "El Ganador es el Primero en Alinear 3 de sus Figuras" << endl;
+            cout << "Si Ninguno de los jugadores Alinea 3 de sus figuras, sera un Empate" << endl
+                 << endl;
+            cout << "El juego presenta dos opciones incluidas, una de revancha y la otra de repetir juego si se llega a dar un empate" << endl
+                 << endl;
+            system("pause");
+            system("cls");
             break;
+
         case 2:
+            system("cls");
+            cout << "PRUEBA\n";
+            cout << "------\n";
+            pruebaJuego();
+            system("pause");
+            system("cls");
             break;
+
         case 3:
+             system("cls");
+            cout << "SALIENDO AL MENU PRINCIPAL..." << endl
+                 << endl;
+            system("pause");
+            system("cls");
             break;
+            
         default:
+            system("cls");
+            cout << endl
+                 << "Opcion Erronea\nPor favor, Ingrese una Opcion Valida" << endl
+                 << endl;
+            system("pause");
+            system("cls");
             break;    
         }
     } while (OP != 3);
