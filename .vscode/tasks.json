@@ -4,10 +4,14 @@
             "type": "cppbuild",
             "label": "C/C++: gcc.exe compilar archivo activo",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "command": "C:/MinGW/bin/gcc.exe",
 =======
             "command": "C:/msys64/ucrt64/bin/gcc.exe",
 >>>>>>> 3553ba198a7e98f2c34cc98176d0ed79749537b8
+=======
+            "command": "C:/msys64/ucrt64/bin/gcc.exe",
+>>>>>>> 3226d473ec3dd881ac7186c5dfba2a552eb06709
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -18,10 +22,14 @@
             ],
             "options": {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "cwd": "C:/MinGW/bin"
 =======
                 "cwd": "C:/msys64/ucrt64/bin"
 >>>>>>> 3553ba198a7e98f2c34cc98176d0ed79749537b8
+=======
+                "cwd": "C:/msys64/ucrt64/bin"
+>>>>>>> 3226d473ec3dd881ac7186c5dfba2a552eb06709
             },
             "problemMatcher": [
                 "$gcc"
