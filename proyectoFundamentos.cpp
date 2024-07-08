@@ -561,3 +561,75 @@ void juego()
         menuRepetir();
     }
 }
+
+// Función que genera la prueba del juego en el submenu
+void pruebaJuego()
+{
+    reiniciarTablero();
+
+    cout << endl;
+    cout << "Elige tu Marcador (X u O): ";
+    char MJ1;
+    cin >> MJ1;
+    cout << endl;
+
+    while (MJ1 != 'X' && MJ1 != 'O')
+    {
+        cout << endl
+             << "Marcador Invalido!" << endl;
+        cout << "Por favor elige 'X' o 'O': ";
+        cin >> MJ1;
+    }
+
+    JA = 1;
+    MA = MJ1;
+
+    mostrarTablero();
+
+    int JG = 0;
+
+    for (int i = 0; i < 9; i++)
+    {
+        int casilla;
+
+        cout << "\nEs el Turno del Jugador " << JA << ". Ingresa el Numero de Casilla: ";
+        cin >> casilla;
+        cout << endl;
+
+        if (casilla < 1 || casilla > 9)
+        {
+            cout << "Casilla Invalida! \nIntentalo Otra Vez.\n";
+            i--;
+            continue;
+        }
+
+        if (!colocarMarcador(casilla))
+        {
+            cout << "Casilla Ocupada! \nIntentalo Otra Vez.\n";
+            i--;
+            continue;
+        }
+        
+        system("cls");
+        mostrarTablero();
+
+        JG = ganadorJuego();
+
+        if (JG == 1)
+        {
+            cout << "\nEL JUGADOR 1 HA GANADO, FELICIDADES!\n\n ";
+            break;
+        }
+        if (JG == 2)
+        {
+            cout << "\nEL JUGADOR 2 HA GANADO, FELICIDADES!\n\n ";
+            break;
+        }
+        cambiarJugadorYMarcador();
+    }
+
+    if (JG == 0)
+    {
+        cout << "\nEs un empate!\n\n";
+    }
+}
