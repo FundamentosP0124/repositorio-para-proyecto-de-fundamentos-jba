@@ -693,7 +693,7 @@ void menuAyuda(){
             system("pause");
             system("cls");
             break;
-            
+
         default:
             system("cls");
             cout << endl
@@ -705,4 +705,9 @@ void menuAyuda(){
         }
     } while (OP != 3);
     
+}
+
+int main(){
+
+    return 0;
 }
