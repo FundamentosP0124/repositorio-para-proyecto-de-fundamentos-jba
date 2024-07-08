@@ -637,4 +637,9 @@ void pruebaJuego()
 // Funcion encargada de proporcionar las opciones del menu de ayuda
 void menuAyuda(){
     int OP; // Variable que guarda la opcion
+    do
+    {
+        
+    } while (OP != 3);
+    
 }
