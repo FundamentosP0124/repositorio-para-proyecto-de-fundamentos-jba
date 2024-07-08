@@ -469,3 +469,95 @@ void menuRevancha()
         }
     } while (decision != 2);
 }
+
+// Función principal del juego general
+void juego()
+{
+    char MJ1;
+
+    cout << "Jugador 1, escribe un nombre y un apellido: ";
+    cin.ignore();
+    getline(cin, NombreJ1);
+    inscribirParticipante(NombreJ1);
+
+    cout << "Jugador 2, escribe un nombre y un apellido: ";
+    getline(cin, NombreJ2);
+    inscribirParticipante(NombreJ2);
+
+    cout << endl;
+    system("pause");
+    system("cls");
+
+    reiniciarTablero();
+
+    cout << NombreJ1 << "\nElige tu Marcador (X u O): ";
+    cin >> MJ1;
+    cout << endl;
+
+    while (MJ1 != 'X' && MJ1 != 'O')
+    {
+        cout << endl
+             << "Marcador Invalido!" << endl;
+        cout << "Por favor elige 'X' o 'O': ";
+        cin >> MJ1;
+        cout << endl
+             << endl;
+    }
+
+    JA = 1;
+    MA = MJ1;
+
+    mostrarTablero();
+
+    int JG = 0;
+
+    for (int i = 0; i < 9; i++)
+    {
+        int casilla;
+
+        cout << "\nEs el Turno del Jugador " << JA << ". Ingresa el Numero de Casilla: ";
+        cin >> casilla;
+        cout << endl;
+
+        if (casilla < 1 || casilla > 9)
+        {
+            cout << "Casilla Invalida! \nIntentalo Otra Vez.\n";
+            i--;
+            continue;
+        }
+
+        if (!colocarMarcador(casilla))
+        {
+            cout << "Casilla Ocupada! \nIntentalo Otra Vez.\n";
+            i--;
+            continue;
+        }
+        
+        system("cls");
+        mostrarTablero();
+
+        JG = ganadorJuego();
+
+        if (JG == 1)
+        {
+            cout << "\nJUGADOR@ " << NombreJ1 << "HA GANADO, FELICIDADES!\n\n ";
+            guardarGanador(NombreJ1);
+            menuRevancha();
+            break;
+        }
+        else if (JG == 2)
+        {
+            cout << "\nJUGADOR@ " << NombreJ2 << " HA GANADO, FELICIDADES!\n\n ";
+            guardarGanador(NombreJ2);
+            menuRevancha();
+            break;
+        }
+        cambiarJugadorYMarcador();
+    }
+
+    if (JG == 0)
+    {
+        cout << "\nEs un empate!\n\n";
+        menuRepetir();
+    }
+}
