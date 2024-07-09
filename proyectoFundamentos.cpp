@@ -11,7 +11,6 @@ string registroGanador[maxGanadores]; // Arreglo para guardar los ganadores
 int numGanadores = 0;  // Contador encargado del numero actual de los ganadores registrados 
 int victorias[maxGanadores] = {0}; // Arreglo para contar las victorias
 const int capacidadInicial = 400;  // Constante que define el numero maximo de participantes
-int capacidad = capacidadInicial;  // Gestiona la dinamica de los participantes del juego 
 string participantes[capacidadInicial]; // Arreglo encargado de guardar a los participantes 
 int numParticipantes = 0;  // Contador encargado del numero actual de participantes registrados 
 
